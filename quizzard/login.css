@@ -1,0 +1,310 @@
+html {
+    height: 100%;
+    }
+    body {
+    margin:0;
+    padding:0;
+    font-family: sans-serif;
+    background: linear-gradient( #243b55);
+    }
+    .login-box {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 400px;
+    padding: 40px;
+    transform: translate(-50%, -50%);
+    background: rgba(0,0,0,.5);
+    box-sizing: border-box;
+    box-shadow: 0 15px 25px rgba(0,0,0,.6);
+    border-radius: 10px;
+    }
+    .login-box h2 {
+    margin: 0 0 30px;
+    padding: 0;
+    color: #fff;
+    text-align: center;
+    }
+    .login-box .user-box {
+    position: relative;
+    }
+    .login-box .user-box input {
+    width: 100%;
+    padding: 10px 0;
+    font-size: 16px;
+    color: #fff;
+    margin-bottom: 30px;
+    border: none;
+    border-bottom: 1px solid #fff;
+    outline: none;
+    background: transparent;
+    }
+    .login-box .user-box label {
+    position: absolute;
+    top:0;
+    left: 0;
+    padding: 10px 0;
+    font-size: 16px;
+    color: #fff;
+    pointer-events: none;
+    transition: .5s;
+    }
+    .login-box .user-box input:focus ~ label,
+    .login-box .user-box input:valid ~ label {
+    top: -20px;
+    left: 0;
+    color: white;
+    font-size: 12px;
+    }
+    .login-box form a {
+    position: relative;
+    display: inline-block;
+    padding: 10px 20px;
+    color: white;
+    font-size: 16px;
+    text-decoration: none;
+    text-transform: uppercase;
+    overflow: hidden;
+    transition: .5s;
+    margin-top: 40px;
+    letter-spacing: 4px
+    }
+    .login-box a:hover {
+    background: rgb(133, 132, 132);
+    color: #7b7b7b;
+    border-radius: 5px;
+    box-shadow: 0 0 5px rgb(128, 127, 127),
+    0 0 25px rgb(134, 133, 133),
+    0 0 50px rgb(130, 129, 129),
+    0 0 100px rgb(136, 134, 134);
+    }
+    .login-box a span {
+    position: absolute;
+    display: block;
+    }
+    .login-box a span:nth-child(1) {
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 2px;
+    background: linear-gradient(90deg, transparent, white);
+    animation: btn-anim1 1s linear infinite;
+    }
+    @keyframes btn-anim1 {
+    0% {
+    left: -100%;
+    }
+    50%,100% {
+    left: 100%;
+    }
+    }
+    .login-box a span:nth-child(2) {
+    top: -100%;
+    right: 0;
+    width: 2px;
+    height: 100%;
+    background: linear-gradient(180deg, transparent, white);
+    animation: btn-anim2 1s linear infinite;
+    animation-delay: .25s
+    }
+    @keyframes btn-anim2 {
+    0% {
+    top: -100%;
+    }
+    50%,100% {
+    top: 100%;
+    }
+    }
+    .login-box a span:nth-child(3) {
+    bottom: 0;
+    right: -100%;
+    width: 100%;
+    height: 2px;
+    background: linear-gradient(270deg, transparent, white);
+    animation: btn-anim3 1s linear infinite;
+    animation-delay: .5s
+    }
+    @keyframes btn-anim3 {
+    0% {
+    right: -100%;
+    }
+    50%,100% {
+    right: 100%;
+    }
+    }
+    .login-box a span:nth-child(4) {
+    bottom: -100%;
+    left: 0;
+    width: 2px;
+    height: 100%;
+    background: linear-gradient(360deg, transparent, white);
+    animation: btn-anim4 1s linear infinite;
+    animation-delay: .75s
+    }
+    @keyframes btn-anim4 {
+    0% {
+    bottom: -100%;
+    }
+    50%,100% {
+    bottom: 100%;
+    }
+    }
+    * {
+        margin: 0;
+        padding: 0;
+    }
+    
+    body {
+        /*To hide the horizontal scroller appearing during the animation*/
+        overflow: hidden;
+    }
+    
+    #clouds {
+        /* padding: 100px 0; */
+        background: #c9dbe9;
+        background: -webkit-linear-gradient(top, #c9dbe9 0%, #fff 100%);
+        background: -linear-gradient(top, #c9dbe9 0%, #fff 100%);
+        background: -moz-linear-gradient(top, #c9dbe9 0%, #fff 100%);
+    }
+    
+    /*Time to finalise the cloud shape*/
+    .cloud {
+        width: 200px;
+        height: 60px;
+        background: #fff;
+    
+        border-radius: 200px;
+        -moz-border-radius: 200px;
+        -webkit-border-radius: 200px;
+    
+        position: relative;
+    }
+    
+    .cloud:before,
+    .cloud:after {
+        content: '';
+        position: absolute;
+        background: #fff;
+        width: 100px;
+        height: 80px;
+        position: absolute;
+        top: -15px;
+        left: 10px;
+    
+        border-radius: 100px;
+        -moz-border-radius: 100px;
+        -webkit-border-radius: 100px;
+    
+        -webkit-transform: rotate(30deg);
+        transform: rotate(30deg);
+        -moz-transform: rotate(30deg);
+    }
+    
+    .cloud:after {
+        /* width: 120px; height: 120px; */
+        width: 120px;
+        height: 120px;
+        top: -55px;
+        left: auto;
+        right: 15px;
+    }
+    
+    /*Time to animate*/
+    .x1 {
+        -webkit-animation: moveclouds 15s linear infinite;
+        -moz-animation: moveclouds 15s linear infinite;
+        -o-animation: moveclouds 15s linear infinite;
+    }
+    
+    /*variable speed, opacity, and position of clouds for realistic effect*/
+    .x2 {
+        left: 200px;
+    
+        -webkit-transform: scale(0.6);
+        -moz-transform: scale(0.6);
+        transform: scale(0.6);
+        opacity: 0.6;
+        /*opacity proportional to the size*/
+    
+        /*Speed will also be proportional to the size and opacity*/
+        /*More the speed. Less the time in 's' = seconds*/
+        -webkit-animation: moveclouds 25s linear infinite;
+        -moz-animation: moveclouds 25s linear infinite;
+        -o-animation: moveclouds 25s linear infinite;
+    }
+    
+    .x3 {
+        left: -250px;
+        top: -50px;
+        /* left: -250px; top: -300px; */
+        -webkit-transform: scale(0.8);
+        -moz-transform: scale(0.8);
+        transform: scale(0.8);
+        opacity: 0.8;
+        /*opacity proportional to the size*/
+    
+        -webkit-animation: moveclouds 20s linear infinite;
+        -moz-animation: moveclouds 20s linear infinite;
+        -o-animation: moveclouds 20s linear infinite;
+    }
+    
+    .x4 {
+        left: 470px;
+        top: -50px;
+    
+        -webkit-transform: scale(0.75);
+        -moz-transform: scale(0.75);
+        transform: scale(0.75);
+        opacity: 0.75;
+        /*opacity proportional to the size*/
+    
+        -webkit-animation: moveclouds 18s linear infinite;
+        -moz-animation: moveclouds 18s linear infinite;
+        -o-animation: moveclouds 18s linear infinite;
+    }
+    
+    .x5 {
+        left: -150px;
+        top: -150px;
+    
+        -webkit-transform: scale(0.8);
+        -moz-transform: scale(0.8);
+        transform: scale(0.8);
+        opacity: 0.8;
+        /*opacity proportional to the size*/
+    
+        -webkit-animation: moveclouds 20s linear infinite;
+        -moz-animation: moveclouds 20s linear infinite;
+        -o-animation: moveclouds 20s linear infinite;
+    }
+    
+    @-webkit-keyframes moveclouds {
+        0% {
+            margin-left: 1000px;
+        }
+    
+        100% {
+            margin-left: -1000px;
+        }
+    }
+    
+    @-moz-keyframes moveclouds {
+        0% {
+            margin-left: 1000px;
+        }
+    
+        100% {
+            margin-left: -1000px;
+        }
+    }
+    
+    @-o-keyframes moveclouds {
+        0% {
+            margin-left: 1000px;
+        }
+    
+        100% {
+            margin-left: -1000px;
+        }
+    }
+    
